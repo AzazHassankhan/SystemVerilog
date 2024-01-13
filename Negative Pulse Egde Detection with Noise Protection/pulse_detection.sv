@@ -2,12 +2,14 @@ module pulse_detection(
 input logic d,clk,reset_n,
 output logic q);
 
-logic D_ff=1;
+
 logic [11:0] register=0;
 logic flag=0;
 always_ff@(posedge clk) begin
 	if (reset_n==0) begin
-		q<=0; end
+		q<=0;
+		register<=0;
+	end
 	else if (d==0 && flag==1)begin
 		q<=1;
 		flag<=0; end
