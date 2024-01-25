@@ -18,7 +18,7 @@ always_ff@(posedge clk) begin
 
 	else begin
 		q<=0; end
- register<= {register[10:0],d};
+	register<= {register[10:0],d};  //left Shifting
 end
 
 endmodule
